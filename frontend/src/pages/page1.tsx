@@ -43,7 +43,7 @@ useEffect(() => {
   setUserId(id);
 
   if (id && !formId) {
-    axios.get(`http://localhost:3001/api/form/by-user/${id}`)
+    axios.get(`https://form-3-tlgr.onrender.com/api/form/by-user/${id}`)
       .then(res => {
         if (res.data && res.data.id) {
           setFormId(res.data.id);
@@ -66,7 +66,7 @@ const [isEmailLocked, setIsEmailLocked] = useState(false);
 
 useEffect(() => {
   if (formId) {
-    axios.get(`http://localhost:3001/api/form/${formId}`)
+    axios.get(`https://form-3-tlgr.onrender.com/api/form/${formId}`)
       .then(res => {
         const data = res.data;
         setFormData({
@@ -143,7 +143,7 @@ useEffect(() => {
     try {  if (formId) {
       return true;
     }
-      const res = await axios.post('http://localhost:3001/api/form/page1', {
+      const res = await axios.post('https://form-3-tlgr.onrender.com/api/form/page1', {
         ...formData,
         userId,
         // id: formId
@@ -187,7 +187,7 @@ useEffect(() => {
    
    
     try {
-      await axios.post('http://localhost:3001/api/form/page2', {
+      await axios.post('https://form-3-tlgr.onrender.com/api/form/page2', {
         id: formId,
         ...educationData
       });
@@ -214,7 +214,7 @@ for (const p of projects) {
     }
   }
   try {
-    await axios.post('http://localhost:3001/api/form/page3', {
+    await axios.post('https://form-3-tlgr.onrender.com/api/form/page3', {
       userFormId: formId,
       projects,
     });

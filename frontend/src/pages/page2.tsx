@@ -26,7 +26,7 @@ const Page2 = ({ formId, onNext, onBack }: Page2Props) => {
     }),
     onSubmit: async (values) => {
       try {
-        await axios.post('http://localhost:3001/api/form/page2', {
+        await axios.post('https://form-3-tlgr.onrender.com/api/form/page2', {
           id: formId,
           ...values,
           institution: values.isStudying ? values.institution : '', // clears if not studying
@@ -42,7 +42,7 @@ const Page2 = ({ formId, onNext, onBack }: Page2Props) => {
   useEffect(() => {
     if (formId) {
       axios
-        .get(`http://localhost:3001/api/form/${formId}`)
+        .get(`https://form-3-tlgr.onrender.com/api/form/${formId}`)
         .then((res) => {
           formik.setValues({
             isStudying: res.data.isStudying ?? true,

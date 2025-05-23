@@ -11,7 +11,7 @@ const Signup = () => {
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3001/api/users/register", {
+      await axios.post("https://form-3-tlgr.onrender.com/api/users/register", {
         email,
         password,
       });
