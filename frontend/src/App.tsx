@@ -7,7 +7,7 @@ import Signup from '../src/pages/signup';
 
 import FormWrapper from '../src/pages/formwrapper';
 
-import Page3 from '../src/pages/page3';
+//import Page3 from '../src/pages/page3';
 function App() {
   return (
     <Routes>
@@ -15,7 +15,7 @@ function App() {
       <Route path="/login" element={<Login/>} />
       <Route path="/signup" element={<Signup />} />
        <Route path="/page2" element={<FormWrapper />} />
-        <Route path="/page3" element={<Page3 />} />
+        {/* <Route path="/page3" element={<Page3 />} /> */}
         <Route path="/page1" element={<FormWrapper />} /> {/* Use wrapper */}
     </Routes>
   );
